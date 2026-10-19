@@ -9,13 +9,13 @@ Stack: **Next.js 14 (App Router) + TypeScript + Tailwind CSS + Zustand**.
 ## 1. Instalación local (VS Code)
 
 ```bash
-# Descomprimí el zip y abrí la carpeta en VS Code
+# Descomprimir el zip y abrir la carpeta en VS Code
 cd opera-cloud-sim
 npm install
 npm run dev
 ```
 
-Abrí http://localhost:3000 — la app arranca en el módulo de Reservas.
+Abrir http://localhost:3000 — la app arranca en el módulo de Reservas.
 
 ## 2. Estructura del proyecto
 
@@ -54,13 +54,13 @@ datos de práctica.
 
 ## 3. Flujo sugerido para practicar
 
-1. **Reservas** — creá una reserva (nombre, fechas, tipo de habitación, tarifa)
-2. **Front Desk** — asigná una habitación libre del tipo correspondiente y hacé Check-In
-3. **Housekeeping** — verificá que la habitación pasó a "Ocupada"
-4. **Cajero** — agregá cargos extra (room service, minibar) o pagos
-5. Volvé a **Front Desk** y hacé Check-Out — mirá cómo la habitación pasa a "Vacía Sucia" en Housekeeping
-6. En Housekeeping, marcá la habitación como limpia para que vuelva a estar disponible
-7. Usá el botón **"Avanzar día (Night Audit)"** en la barra superior para simular el cierre de día
+1. **Reservas** — crear una reserva (nombre, fechas, tipo de habitación, tarifa)
+2. **Front Desk** — asignar una habitación libre del tipo correspondiente y hacé Check-In
+3. **Housekeeping** — verificar que la habitación pasó a "Ocupada"
+4. **Cajero** — agregar cargos extra (room service, minibar) o pagos
+5. Vuelve a **Front Desk** y hacer Check-Out — mira cómo la habitación pasa a "Vacía Sucia" en Housekeeping
+6. En Housekeeping, marca la habitación como limpia para que vuelva a estar disponible
+7. Usa el botón **"Avanzar día (Night Audit)"** en la barra superior para simular el cierre de día
 
 ## 4. Ideas para ampliar (y seguir practicando conceptos reales de PMS)
 
@@ -69,21 +69,3 @@ datos de práctica.
 - Agregar **rate shopping** / temporadas con tarifas variables por fecha
 - Agregar **reportes** (ocupación %, ADR, RevPAR) calculados desde `reservations` y `folios`
 - Conectar una base de datos real (Postgres + Prisma) en vez de `localStorage`
-
-## 5. Deploy a Vercel
-
-Opción A — desde la web:
-1. Subí esta carpeta a un repositorio de GitHub
-2. Entrá a https://vercel.com/new, importá el repo
-3. Vercel detecta Next.js automáticamente — dale a "Deploy"
-
-Opción B — desde la terminal:
-```bash
-npm install -g vercel
-vercel login
-vercel        # deploy de prueba
-vercel --prod # deploy a producción
-```
-
-No necesitás configurar variables de entorno ni base de datos para esta
-versión: todo corre en el cliente (frontend) con estado en memoria/localStorage.
